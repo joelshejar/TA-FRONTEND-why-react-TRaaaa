@@ -45,7 +45,7 @@ function createUI(){
     ul.innerHTML = ''
     movies.forEach((elm,i)=>{
         let li=elm1('li',{},elm.name,
-        elm1('button',{"data-id": i,},
+        elm1('button',{"data-id": i, 'onclick':watched},
         elm.watched?'Watched':'Watch Later'))
         // let li = document.createElement('li')
         // let button = document.createElement('button')
@@ -60,8 +60,6 @@ function createUI(){
         // }
         
         ul.append(li)
-        let button = document.querySelector('button')
-        button.addEventListener('click', watched)
         
     })
 }
