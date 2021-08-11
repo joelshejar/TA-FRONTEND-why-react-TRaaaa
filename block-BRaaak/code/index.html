@@ -1,37 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex jsb">
+        <strong>Movie</strong>
+        <a href="#">Logout</a>
+      </div>
+    </header>
+    <main>
+      <section class="sec-padding">
+        <div class="container">
+          <div class="root">
+            <!-- <article class="card">
+              <div class="top-div">
+                <img
+                  class="flexi-img"
+                  src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/a5/86.jpg"
+                  alt=""
+                />
+                <div class="round1">
+                  <h4>26</h4>
+                  <h4>Feb</h4>
+                </div>
+                <div class="round2">
+                  <h4>Photos</h4>
+                </div>
+              </div>
+              <h2>Lorem ipsum dolor sit amet consectetur</h2>
+              <h4>Lorem ipsum dolor sit amet consectetur lorem</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tempore neque nostrum vitae voluptatem vel nulla ad. Voluptates
+                nobis ex laborum rerum officiis! Amet aspernatur laboriosam in
+                ipsam temporibus quibusdam hic.
+              </p>
+            </article> -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-    <div id="root">
-        <h2>All Articles</h2>
-        <p>Collection of best articles on Startups</p>
-    </div>
+
     <script type="text/babel">
-        let hi = (props)=>(
-            <>
-                <h1>{props.username==='Arya'?'No one':'Lord of'}</h1>
-                <h3>Image</h3>
-            </>
-        )
-        let starks = (
+      let root = document.querySelector('.root');
 
-            <>
-                <hi username="Arya">
+      let articles = [
+        {
+          title: 'City Lights in New York',
+          date: new Date('2017-01-26'),
+          comments: 67,
+          subTitle: 'The city that never sleeps.',
+          description:
+            'New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.',
+          category: 'photos',
+          imageURL:
+            'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        },
+        {
+          title: 'Twitter’s decentralized future',
+          date: new Date('2021-01-16'),
+          comments: 43,
+          subTitle: 'The decentralized future of twitter.',
+          description:
+            'The platform’s vision of a sweeping open standard could also be the far-right’s internet endgame',
+          category: 'social network',
+          imageURL:
+            'https://techcrunch.com/wp-content/uploads/2019/09/twitter-hidden-replies1.png?resize=1536,816',
+        },
+        {
+          title: 'Startups look beyond lidar for autonomous vehicle perception',
+          date: new Date('2017-07-26'),
+          comments: 17,
+          subTitle:
+            'Lidar pushed ahead of traditional cameras because it could do things they couldn’t',
+          description:
+            'Last CES was a time of reckoning for lidar companies, many of which were cratering due to a lack of demand from a (still) non-existent autonomous vehicle industry. ',
+          category: 'future',
+          imageURL:
+            'https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-846875220.jpg?w=1390&crop=1',
+        },
+      ];
 
-                </hi>
-            </>
+      let Card = (props) => {
+        console.log(props);
+        return (
+          <article class='card'>
+            <div class='top-div'>
+              <img class='flexi-img' src={props.imageURL} alt='' />
+              <div class='round1'>
+                <h4>{props.date.getDay()}</h4>
+                <h4>{props.date.getMonth()}</h4>
+              </div>
+              <div class='round2'>
+                <h4>{props.category}</h4>
+              </div>
+            </div>
+            <h2>{props.title}</h2>
+            <h3>{props.subTitle}</h3>
+            <p>{props.description}</p>
+          </article>
+        );
+      };
 
+      let all = (
+        <>
+          <Card
+            title='Startups look beyond lidar for autonomous vehicle perception'
+            date={new Date('2017-07-26')}
+            comments={17}
+            subTitle='Lidar pushed ahead of traditional cameras because it could do things they couldn’t'
+            description='Last CES was a time of reckoning for lidar companies, many of which were cratering due to a lack of demand from a (still) non-existent autonomous vehicle industry. '
+            category='future'
+            imageURL='https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-846875220.jpg?w=1390&crop=1'
+          />
 
-        )
-        ReactDOM.render(starks, document.getElementById('root'))
+          <Card
+            title='Startups look beyond lidar for autonomous vehicle perception'
+            date={new Date('2017-07-26')}
+            comments={17}
+            subTitle='Lidar pushed ahead of traditional cameras because it could do things they couldn’t'
+            description='Last CES was a time of reckoning for lidar companies, many of which were cratering due to a lack of demand from a (still) non-existent autonomous vehicle industry. '
+            category='future'
+            imageURL='https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-846875220.jpg?w=1390&crop=1'
+          />
+        </>
+      );
+
+      ReactDOM.render(all, root);
     </script>
-</body>
+  </body>
 </html>
