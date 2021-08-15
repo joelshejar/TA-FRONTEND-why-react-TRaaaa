@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 function Articles(props){
     let data = [
@@ -125,7 +125,9 @@ function Article(props){
         </div>
     )
 }
-
+Article.propTypes = {
+    title:PropTypes.string
+}
 
 
 export default Articles
