@@ -94,6 +94,5 @@ label{
 .flex-wrap1{
     display: flex;
     justify-content: space-between;
-    
     flex-wrap: wrap;
 }
