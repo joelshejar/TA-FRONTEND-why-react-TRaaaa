@@ -2,6 +2,8 @@
 
 ## Properties That The Button Component Can Be Passed
 
+
+
 | Property         | Description                         | Type          | Required |
 | :--------------- | :---------------------------------- | :------------ | :------- |
 | `disabled`       | Sets the button to a disabled state | `boolean`     | false    |
