@@ -315,7 +315,7 @@ body {
       rgba(19, 120, 228, 0.7),
       rgba(126, 243, 102, 0.7)
     ),
-    url(../media/home-bg.jpg) center center no-repeat;
+    url(../styles/media/home-bg.jpg) center center no-repeat;
   background-size: cover;
 }
 
